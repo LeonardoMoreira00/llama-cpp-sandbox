@@ -1,0 +1,1 @@
+ cp "$(dirname "$0")/opencode.json" ~/.config/opencode/opencode.json

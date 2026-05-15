@@ -1,0 +1,30 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "local-llama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Local llama-server",
+      "options": {
+        "baseURL": "http://127.0.0.1:11434/v1"
+      },
+      "models": {
+        "Jackrong/Qwen3.5-9B-DeepSeek-V4-Flash-GGUF:Q4_K_M": {
+          "name": "Qwen3.5 9B DeepSeek V4 Flash Q4_K_M",
+          "limit": {
+            "context": 32768,
+            "output": 4096
+          }
+        },
+        "unsloth/Ministral-3-8B-Instruct-2512-GGUF:UD-Q4_K_XL": {
+          "name": "Ministral 3 8B Instruct UD-Q4_K_XL",
+          "limit": {
+            "context": 32768,
+            "output": 4096
+          }
+        }
+      }
+    }
+  },
+  "model": "local-llama/Jackrong/Qwen3.5-9B-DeepSeek-V4-Flash-GGUF:Q4_K_M",
+  "small_model": "local-llama/unsloth/Ministral-3-8B-Instruct-2512-GGUF:UD-Q4_K_XL"
+}
