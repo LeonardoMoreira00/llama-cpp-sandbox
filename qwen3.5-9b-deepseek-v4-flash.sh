@@ -2,15 +2,15 @@
 
 llama-server \
   -hf Jackrong/Qwen3.5-9B-DeepSeek-V4-Flash-GGUF:Q4_K_M \
-  -ngl 20 \
-  -c 32768 \
-  -b 2048 \
-  -ub 512 \
+  --n-gpu-layers 20 \
+  --ctx-size 32768 \
+  --batch-size 2048 \
+  --ubatch-size 512 \
   --cache-type-k q8_0 \
   --cache-type-v q8_0 \
-  -fa on \
+  --flash-attn on \
   --jinja \
   --port 11434 \
-  --temp 0.7 \
+  --temperature 0.7 \
   --top-p 0.95 \
   --repeat-penalty 1.1

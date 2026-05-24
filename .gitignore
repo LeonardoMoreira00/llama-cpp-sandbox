@@ -1,0 +1,3 @@
+*.py
+calc-memory.sh
+__pycache__
