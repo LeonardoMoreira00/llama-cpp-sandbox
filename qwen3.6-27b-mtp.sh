@@ -3,6 +3,7 @@
 #--n-gpu-layers 20 \
 CUDA_VISIBLE_DEVICES=0,1  llama-server \
   -hf unsloth/Qwen3.6-27B-MTP-GGUF:Q4_K_M \
+  --alias qwen3.6-27b-mtp \
   --ctx-size 262144 \
   --cache-type-k q4_1 \
   --cache-type-v q4_1 \

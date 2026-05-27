@@ -512,6 +512,38 @@ top -p $(pgrep llama-server)
 
 ---
 
+## Using with AI Coding Tools
+
+Once llama-server is running (e.g. on port 11434), you can use it as a backend for Claude Code and OpenAI Codex CLI via its OpenAI-compatible API.
+
+### Claude Code
+
+```bash
+# Point Claude Code at your local llama.cpp server
+ANTHROPIC_BASE_URL=http://localhost:11434/v1 \
+ANTHROPIC_API_KEY=dummy \
+claude --model unsloth/Qwen3.6-35B-A3B-MTP-GGUF:UD-Q4_K_M
+```
+
+The model name must match the one loaded by llama-server. The API key can be any non-empty string since llama.cpp doesn't authenticate.
+
+### OpenAI Codex CLI
+
+```bash
+# Point Codex at your local llama.cpp server
+OPENAI_BASE_URL=http://localhost:11434/v1 \
+OPENAI_API_KEY=dummy \
+codex --model unsloth/Qwen3.6-35B-A3B-MTP-GGUF:UD-Q4_K_M
+```
+
+### Notes
+
+- Both tools expect an OpenAI-compatible `/v1/chat/completions` endpoint, which llama-server provides when started with `--jinja`.
+- Use `--port` to change the server port if 11434 conflicts with another service (e.g. Ollama).
+- For best results with coding tasks, use a model with large context (`--ctx-size 32768` or higher) and low temperature (`--temperature 0.3-0.6`).
+
+---
+
 ## References
 
 - **llama.cpp GitHub:** https://github.com/ggerganov/llama.cpp

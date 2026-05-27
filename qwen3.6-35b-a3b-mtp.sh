@@ -3,7 +3,8 @@
 #--n-gpu-layers 20 \
 CUDA_VISIBLE_DEVICES=0,1  llama-server \
   -hf unsloth/Qwen3.6-35B-A3B-MTP-GGUF:UD-Q4_K_M \
-  --ctx-size 262144 \
+  --alias qwen3.6-35b-a3b-mtp \
+  --ctx-size 131072 \
   --cache-type-k q4_1 \
   --cache-type-v q4_1 \
   --jinja \

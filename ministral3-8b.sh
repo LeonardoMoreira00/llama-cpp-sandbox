@@ -2,6 +2,7 @@
 
 llama-server \
   -hf unsloth/Ministral-3-8B-Instruct-2512-GGUF:UD-Q4_K_XL \
+  --alias ministral3-8b \
   --n-gpu-layers 20 \
   --ctx-size 32768 \
   --batch-size 2048 \

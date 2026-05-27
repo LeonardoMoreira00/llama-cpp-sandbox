@@ -2,6 +2,7 @@
 
 CUDA_VISIBLE_DEVICES=0,1  llama-server \
   -hf unsloth/Qwen3.5-9B-MTP-GGUF:UD-Q4_K_XL \
+  --alias qwen3.5-9b-mtp \
   --n-gpu-layers 16 \
   --ctx-size 32768 \
   --batch-size 2048 \
