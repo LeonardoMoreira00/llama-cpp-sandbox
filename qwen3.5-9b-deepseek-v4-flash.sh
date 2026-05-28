@@ -1,10 +1,10 @@
 #!/bin/bash
 
-llama-server \
+CUDA_VISIBLE_DEVICES=0,1 llama-server \
   -hf Jackrong/Qwen3.5-9B-DeepSeek-V4-Flash-GGUF:Q4_K_M \
   --alias qwen3.5-9b-deepseek-v4-flash \
-  --n-gpu-layers 20 \
-  --ctx-size 32768 \
+  --n-gpu-layers 99 \
+  --ctx-size 65536 \
   --batch-size 2048 \
   --ubatch-size 512 \
   --cache-type-k q8_0 \

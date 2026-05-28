@@ -1,10 +1,10 @@
 #!/bin/bash
 
-CUDA_VISIBLE_DEVICES=0,1  llama-server \
+CUDA_VISIBLE_DEVICES=0,1 llama-server \
   -hf unsloth/Qwen3.5-9B-MTP-GGUF:UD-Q4_K_XL \
   --alias qwen3.5-9b-mtp \
-  --n-gpu-layers 16 \
-  --ctx-size 32768 \
+  --n-gpu-layers 99 \
+  --ctx-size 65536 \
   --batch-size 2048 \
   --ubatch-size 512 \
   --cache-type-k q8_0 \
@@ -17,4 +17,3 @@ CUDA_VISIBLE_DEVICES=0,1  llama-server \
   --repeat-penalty 1.1 \
   --spec-type draft-mtp \
   --spec-draft-n-max 2
-  

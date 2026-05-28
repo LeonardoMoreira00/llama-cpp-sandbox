@@ -1,9 +1,10 @@
 #!/bin/bash
 
-llama-server \
+CUDA_VISIBLE_DEVICES=0,1 llama-server \
   -hf unsloth/Ministral-3-8B-Instruct-2512-GGUF:UD-Q4_K_XL \
   --alias ministral3-8b \
-  --n-gpu-layers 20 \
+  --n-gpu-layers 99 \
+  --threads 16 \
   --ctx-size 32768 \
   --batch-size 2048 \
   --ubatch-size 512 \
