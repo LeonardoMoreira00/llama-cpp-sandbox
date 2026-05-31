@@ -1,8 +1,8 @@
 #!/bin/bash
-# 64 layers, 35B total (3B active MoE)
+# 30 layers, 25.2B total parameters, 3.8b active parameters, context length 256k tokens
 CUDA_VISIBLE_DEVICES=0,1 llama-server \
-  -hf unsloth/Qwen3.6-35B-A3B-MTP-GGUF:UD-Q4_K_M \
-  --alias qwen3.6-35b-a3b-mtp \
+  -hf unsloth/gemma-4-26B-A4B-it-GGUF:UD-Q4_K_XL \
+  --alias gemma-4-26b-a4b-it \
   --n-gpu-layers 30 \
   --threads 16 \
   --ctx-size 131072 \
@@ -10,14 +10,11 @@ CUDA_VISIBLE_DEVICES=0,1 llama-server \
   --ubatch-size 512 \
   --cache-type-k q4_0 \
   --cache-type-v q4_0 \
-  --tensor-split 50,20 \
-  --parallel 1 \
+  --tensor-split 50,42 \
   --jinja \
   --flash-attn on \
   --port 11434 \
-  --temperature 0.6 \
+  --temperature 0.65 \
   --top-p 0.95 \
   --repeat-penalty 1.1 \
-  --parallel 1 \
-  --spec-type draft-mtp \
-  --spec-draft-n-max 2
+  --parallel 1
