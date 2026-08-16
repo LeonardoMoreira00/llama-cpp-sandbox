@@ -1,9 +1,8 @@
 #!/bin/bash
-# 64 layers, 35B total (3B active MoE)
 CUDA_VISIBLE_DEVICES=0,1 llama-server \
-  -hf unsloth/Qwen3.6-35B-A3B-MTP-GGUF:UD-Q4_K_M \
-  --alias qwen3.6-35b-a3b-mtp \
-  --n-gpu-layers 30 \
+  -hf unsloth/Qwen3.8-27B-GGUF:Q4_K_S \
+  --alias qwen3.8-27b \
+  --n-gpu-layers 60 \
   --threads 16 \
   --ctx-size 131072 \
   --batch-size 2048 \

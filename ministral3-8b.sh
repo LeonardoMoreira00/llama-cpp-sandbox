@@ -12,6 +12,7 @@ CUDA_VISIBLE_DEVICES=0,1 llama-server \
   --cache-type-v q8_0 \
   --flash-attn on \
   --jinja \
+  --host 0.0.0.0 \
   --port 11434 \
   --temperature 0.7 \
   --top-p 0.95 \

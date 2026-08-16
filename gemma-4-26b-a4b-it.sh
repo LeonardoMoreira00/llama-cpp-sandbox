@@ -10,9 +10,10 @@ CUDA_VISIBLE_DEVICES=0,1 llama-server \
   --ubatch-size 512 \
   --cache-type-k q4_0 \
   --cache-type-v q4_0 \
-  --tensor-split 50,42 \
+  --tensor-split 51,20 \
   --jinja \
   --flash-attn on \
+  --host 0.0.0.0 \
   --port 11434 \
   --temperature 0.65 \
   --top-p 0.95 \
